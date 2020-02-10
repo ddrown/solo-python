@@ -216,6 +216,12 @@ class SoloClient:
     def ping(self,data="pong"):
         return self.send_data_hid(CTAPHID.PING, data)
 
+    def get_info(self,):
+        return self.ctap2.get_info()
+
+    def ssh_agent(self,data):
+        return self.send_data_hid(0x63, data)
+
     def reset(self,):
         self.ctap2.reset()
 
